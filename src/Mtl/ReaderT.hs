@@ -6,8 +6,9 @@ import Control.Monad.Reader (ReaderT, runReaderT, ask)
 
 func1 :: MonadIO m => ReaderT String m String
 func1 = do
+  env <- ask
   res <- func2
-  return ("Value " ++ show res)
+  return ("Correlation: " ++ env ++ ", " ++ show res)
 
 func2 :: MonadIO m => ReaderT String m Int
 func2 = do

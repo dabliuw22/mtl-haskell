@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3f2234fd6074e38118dd676e0fdf0445f62606a4a15fbf0a00bc3b77b350f038
+-- hash: fa9bbef846f31da8cd4a00abd032bb5b0bf36c1e413e1e67a0fcc2856c9fc0b5
 
 name:           mtl-haskell
 version:        0.1.0.0
@@ -29,6 +29,7 @@ library
   exposed-modules:
       Monad.Reader
       Monad.Writer
+      Mtl.MaybeT
       Mtl.ReaderT
       Mtl.WriterT
   other-modules:
@@ -38,6 +39,7 @@ library
   build-depends:
       base >=4.7 && <5
     , mtl
+    , transformers
   default-language: Haskell2010
 
 executable mtl-haskell-exe
@@ -51,6 +53,7 @@ executable mtl-haskell-exe
       base >=4.7 && <5
     , mtl
     , mtl-haskell
+    , transformers
   default-language: Haskell2010
 
 test-suite mtl-haskell-test
@@ -65,4 +68,5 @@ test-suite mtl-haskell-test
       base >=4.7 && <5
     , mtl
     , mtl-haskell
+    , transformers
   default-language: Haskell2010

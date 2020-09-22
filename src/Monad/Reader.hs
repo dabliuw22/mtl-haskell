@@ -4,8 +4,9 @@ import Control.Monad.Reader (Reader, runReader, ask)
 
 func1 :: Reader String String
 func1 = do
+  env <- ask
   res <- func2
-  return ("Value " ++ show res)
+  return ("Correlation: " ++ env ++ ", " ++ show res)
 
 func2 :: Reader String Int
 func2 = do
