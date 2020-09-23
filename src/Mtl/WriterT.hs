@@ -1,6 +1,6 @@
 module Mtl.WriterT where
 
-import Control.Monad.Trans (liftIO)
+import Control.Monad.Trans (liftIO, lift)
 import Control.Monad.Writer (WriterT, runWriterT, tell)
   
 func1 :: Monad m => WriterT [String] m String
@@ -22,7 +22,10 @@ func3 = do
   tell span
   return 3
 
+initLog :: WriterT [String] IO ()
+initLog = lift $ print "Init WriterT"
+
 run :: IO ()
 run = do
-  res <- runWriterT func1
+  res <- runWriterT $ initLog *> func1
   print res
