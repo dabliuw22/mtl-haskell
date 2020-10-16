@@ -1,10 +1,10 @@
 module Mtl.WriterT where
 
-import Control.Monad.Trans (liftIO, lift)
+import Control.Monad.Trans (lift, liftIO)
 import Control.Monad.Writer (WriterT, runWriterT, tell)
-  
+
 func1 :: Monad m => WriterT [String] m String
-func1 = do 
+func1 = do
   let span = ["span-1"]
   tell span
   show <$> func2 -- f <$> Functor ó fmap f Functor

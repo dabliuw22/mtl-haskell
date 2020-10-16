@@ -1,6 +1,6 @@
 module Monad.Reader where
 
-import Control.Monad.Reader (Reader, runReader, ask)
+import Control.Monad.Reader (Reader, ask, runReader)
 
 func1 :: Reader String String
 func1 = do

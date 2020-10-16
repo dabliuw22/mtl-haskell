@@ -3,7 +3,7 @@ module Monad.Writer where
 import Control.Monad.Writer (Writer, runWriter, tell)
 
 func1 :: Writer [String] String
-func1 = do 
+func1 = do
   let span = ["span-1"]
   tell span
   show <$> func2 -- f <$> Functor ó fmap f Functor
@@ -19,8 +19,8 @@ func3 :: Writer [String] Int
 func3 = do
   let span = ["span-3"]
   tell span
-  return 3 
-          
+  return 3
+
 run :: IO ()
 run = do
   let res = runWriter func1

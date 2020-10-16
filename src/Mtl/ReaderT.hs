@@ -1,8 +1,8 @@
 module Mtl.ReaderT where
 
-import Control.Monad.Trans (liftIO)
 import Control.Monad.IO.Class (MonadIO)
-import Control.Monad.Reader (ReaderT, runReaderT, ask)
+import Control.Monad.Reader (ReaderT, ask, runReaderT)
+import Control.Monad.Trans (liftIO)
 
 func1 :: MonadIO m => ReaderT String m String
 func1 = do
