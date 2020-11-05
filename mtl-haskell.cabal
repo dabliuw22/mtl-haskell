@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fa9bbef846f31da8cd4a00abd032bb5b0bf36c1e413e1e67a0fcc2856c9fc0b5
+-- hash: 55441800e5b66c1722771b78e2e34d9e952e8e31d9c0846429a6adddb561d9d2
 
 name:           mtl-haskell
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Monad.Reader
+      Monad.State
       Monad.Writer
       Mtl.MaybeT
       Mtl.ReaderT
