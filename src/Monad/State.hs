@@ -29,6 +29,7 @@ func2 = do
 
 func3 :: State Counter String
 -- func3 = state (\s -> ("Func3", s + 1))
+-- func3 = fmap (const "Func3") (modify (+1))
 func3 = do
   counter <- get
   put $ counter + 1
