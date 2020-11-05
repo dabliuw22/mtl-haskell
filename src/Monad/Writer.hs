@@ -1,8 +1,9 @@
 module Monad.Writer where
 
-import Control.Monad.Writer (Writer, runWriter, tell)
+import Control.Monad.Writer (Writer, runWriter, tell, writer)
 
 func1 :: Writer [String] String
+-- func1 = func2 >>= (\value -> writer (show value, ["span-1"]))
 func1 = do
   let span = ["span-1"]
   tell span
@@ -16,6 +17,7 @@ func2 = do
   return $ res + 2
 
 func3 :: Writer [String] Int
+-- func3 = writer (3, ["span-3"])
 func3 = do
   let span = ["span-3"]
   tell span
